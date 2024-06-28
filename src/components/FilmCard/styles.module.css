@@ -1,23 +1,50 @@
+.card {
+	background-color: white;
+	display: flex;
+	border-radius: 8px;
+	padding: 24px;
+}
+
 .image {
 	width: 100px;
 	height: 120px;
 	border-radius: 8px;
 	object-fit: cover;
-}
-
-.card {
-	background-color: white;
-	display: flex;
-	align-items: center;
-	border-radius: 8px;
-	padding: 24px;
+	vertical-align: top;
 }
 
 .type {
 	font-family: "SF Pro Display";
 	color: #ababab;
+	font-size: 14px;
+	line-height: 20px;
+	font-weight: 400;
+	vertical-align: top;
+	padding: 6px 0;
+}
+
+.text {
+	font-family: "SF Pro Display";
+	color: black;
+	font-size: 14px;
+	line-height: 20px;
+	font-weight: 400;
+	padding: 6px 0;
+	vertical-align: top;
 }
 
 .title {
 	width: 100%;
+	font-size: 20px;
+	font-weight: 600;
+}
+
+.table {
+	margin-left: 24px;
+	border-collapse: collapse;
+}
+
+.line {
+	height: 20px;
+	padding: 12px 0;
 }

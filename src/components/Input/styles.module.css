@@ -1,0 +1,23 @@
+textarea:focus,
+input:focus {
+	outline: none;
+}
+
+.input {
+	border-radius: 8px;
+	padding: 12px;
+	height: 40px;
+	border: none;
+	width: 40%;
+}
+
+.search {
+	background-image: url("/public/images/search.svg");
+	background-position: 12px 12px;
+	background-repeat: no-repeat;
+	padding-left: 40px;
+}
+
+.input:focus {
+	outline: 1px solid #ff5500;
+}

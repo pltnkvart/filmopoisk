@@ -5,6 +5,8 @@
 	padding: 24px 32px;
 	display: inline-flex;
 	justify-content: space-between;
+	position: sticky;
+	top: 0;
 }
 
 .title {

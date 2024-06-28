@@ -28,8 +28,10 @@ export const Header = () => {
 			</div>
 
 			{isVisible && (
-				<Modal onClose={() => setIsVisible(false)}>
-					Авторизация
+				<Modal
+					title={"Авторизация"}
+					onClose={() => setIsVisible(false)}
+				>
 					<label htmlFor="login">Логин</label>
 					<input type="text" id="login" />
 					<label htmlFor="password">Пароль</label>

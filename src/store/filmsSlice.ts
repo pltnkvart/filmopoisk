@@ -3,7 +3,7 @@ import { FullMovieInfo, ShortMovieInfo } from "../types/types";
 
 const URL = "http://localhost:3030/api/v1";
 
-interface IGetFilmsProps {
+export interface IGetFilmsProps {
 	search_result: ShortMovieInfo[];
 	total_pages: number;
 }
@@ -13,8 +13,8 @@ export const apiSlice = createApi({
 	baseQuery: fetchBaseQuery({ baseUrl: URL }),
 	keepUnusedDataFor: 100,
 	endpoints: (builder) => ({
-		getFilms: builder.query<IGetFilmsProps, void>({
-			query: () => "/search",
+		getFilms: builder.query<IGetFilmsProps, number>({
+			query: (page = 1) => `search?page=${page}`,
 		}),
 		getFilmById: builder.query<FullMovieInfo, number>({
 			query: (id) => `/movie/${id}`,

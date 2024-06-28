@@ -2,7 +2,7 @@
 	background-color: black;
 	position: absolute;
 	width: 100vw;
-	height: 100vh;
+	height: 100vw;
 	top: 0;
 	left: 0;
 	opacity: 0.2;
@@ -13,10 +13,23 @@
 	cursor: pointer;
 }
 
-/* .modal {
-	background-color: white;
-	position: "absolute";
-	top: 0;
-	left: 0;
-	z-index: 2;
-} */
+.top {
+	display: inline-flex;
+	justify-content: space-between;
+}
+
+.title {
+	font-family: "Roboto";
+	font-size: 20px;
+	font-weight: 600;
+	line-height: 20px;
+	text-align: left;
+	flex-grow: 1;
+}
+
+.closeBtn {
+	width: 20px;
+	cursor: pointer;
+	margin-left: auto;
+	color: #ababab;
+}
