@@ -2,6 +2,7 @@ import { createPortal } from "react-dom";
 
 import styles from "./styles.module.css";
 import classNames from "classnames";
+import { Button } from "../Button/Button";
 
 export interface IModalProps {
 	children: React.ReactNode;
@@ -9,7 +10,6 @@ export interface IModalProps {
 }
 
 export const Modal = ({ children, onClose }: IModalProps) => {
-	console.log(styles);
 	return createPortal(
 		<>
 			<div
@@ -21,13 +21,16 @@ export const Modal = ({ children, onClose }: IModalProps) => {
 			<div
 				style={{
 					backgroundColor: "white",
+					width: "fit-content",
 					position: "absolute",
-					top: 0,
-					left: 0,
+					top: "200px",
+					left: "50%",
 					zIndex: 2,
+					transform: "translate(-50%, -50%)",
 				}}
 			>
-				<button onClick={onClose}>Close</button>
+				<Button onClick={onClose}>Close</Button>
+				{/* TODO: Add close button as image */}
 				{children}
 			</div>
 		</>,

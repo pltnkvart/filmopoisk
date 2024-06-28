@@ -1,0 +1,23 @@
+.image {
+	width: 100px;
+	height: 120px;
+	border-radius: 8px;
+	object-fit: cover;
+}
+
+.card {
+	background-color: white;
+	display: flex;
+	align-items: center;
+	border-radius: 8px;
+	padding: 24px;
+}
+
+.type {
+	font-family: "SF Pro Display";
+	color: #ababab;
+}
+
+.title {
+	width: 100%;
+}

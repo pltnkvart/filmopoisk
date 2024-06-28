@@ -1,10 +1,18 @@
-import { Header } from "./components/Header/Header";
+import { Provider } from "react-redux";
 import { UserContextProvider } from "./contexts/userContext";
+import { store } from "./store/store";
+import { router } from "./router/router";
+import { RouterProvider } from "react-router-dom";
+import { Layout } from "./components/Layout/Layout";
 
-export function App() {
+export const App = () => {
 	return (
 		<UserContextProvider>
-			<Header></Header>
+			<Provider store={store}>
+				<Layout>
+					<RouterProvider router={router} />
+				</Layout>
+			</Provider>
 		</UserContextProvider>
 	);
-}
+};

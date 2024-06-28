@@ -2,7 +2,7 @@ import React from "react";
 import { useMemo } from "react";
 import { useState } from "react";
 
-export const UserContext = React.createContext(null);
+export const UserContext = React.createContext({});
 
 interface IUserContextProviderProps {
 	children: React.ReactNode;
