@@ -30,6 +30,8 @@ export const Modal = ({ title, children, onClose }: IModalProps) => {
 					transform: "translate(-50%, -50%)",
 					padding: "24px",
 					borderRadius: "8px",
+					display: "flex",
+					flexDirection: "column",
 				}}
 			>
 				<div className={styles.top}>

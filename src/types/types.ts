@@ -49,7 +49,7 @@ export type ShortMovieInfo = Omit<
 export interface IQueryParams {
 	title?: string;
 	genre?: keyof typeof GENRES;
-	release_year?: string;
+	release_year?: keyof typeof YEARS;
 	sort_by?: "release_year" | "title" | "rating";
 	order?: "asc" | "desc";
 	page?: number;
