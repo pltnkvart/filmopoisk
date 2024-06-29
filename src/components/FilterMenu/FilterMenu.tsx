@@ -4,11 +4,15 @@ import { SelectDropdown } from "../Select/Select";
 import styles from "./styles.module.css";
 
 interface IFilterMenuProps {
+	selectedGenre?: keyof typeof GENRES;
+	selectedYear?: keyof typeof YEARS;
 	onChangeGenre?: (genreId: keyof typeof GENRES) => void;
 	onChangeYear?: (year: keyof typeof YEARS) => void;
 }
 
 export const FilterMenu = ({
+	selectedGenre,
+	selectedYear,
 	onChangeGenre,
 	onChangeYear,
 }: IFilterMenuProps) => {
@@ -28,6 +32,7 @@ export const FilterMenu = ({
 			<div>
 				<label>Жанр</label>
 				<SelectDropdown
+					currentValue={selectedGenre}
 					options={GENRES}
 					placeholder="Выбери жанр"
 					onChange={handleGenreChange}
@@ -36,6 +41,7 @@ export const FilterMenu = ({
 			<div>
 				<label>Год выпуска</label>
 				<SelectDropdown
+					currentValue={selectedYear}
 					options={YEARS}
 					placeholder="Выбери год"
 					onChange={handleYearChange}

@@ -1,12 +1,14 @@
 import styles from "./styles.module.css";
 
 interface ISelectProps {
+	currentValue?: string;
 	placeholder?: string;
 	options: Record<string, string>;
 	onChange?: (e: React.ChangeEvent<HTMLSelectElement>) => void;
 }
 
 export const SelectDropdown = ({
+	currentValue = "DEFAULT",
 	placeholder,
 	options,
 	onChange,
@@ -14,7 +16,7 @@ export const SelectDropdown = ({
 	return (
 		<select
 			className={styles.select}
-			defaultValue={"DEFAULT"}
+			defaultValue={currentValue}
 			onChange={onChange}
 		>
 			<option value="DEFAULT" disabled hidden>
@@ -22,7 +24,12 @@ export const SelectDropdown = ({
 			</option>
 			{Object.entries(options).map(([value, label]) => {
 				return (
-					<option className={styles.option} value={value} key={value}>
+					<option
+						className={styles.option}
+						value={value}
+						key={value}
+						selected={currentValue === value}
+					>
 						{label}
 					</option>
 				);
