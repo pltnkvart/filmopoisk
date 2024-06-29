@@ -8,6 +8,7 @@ import { InputArea } from "../../Input/InputSearch";
 import { apiSlice } from "../../../store/filmsSlice";
 import { Pagination } from "../../Pagination/Pagination";
 import { useNavigate } from "react-router-dom";
+import { LoadingSpinner } from "../../LoadingSpinner/LoadingSpinner";
 
 export const FilmsPage = () => {
 	const queryParams = new URLSearchParams();
@@ -26,11 +27,11 @@ export const FilmsPage = () => {
 	});
 
 	if (!data) {
-		return <div>Data not found</div>;
-	}
-
-	if (isLoading) {
-		return <div>Loading...</div>;
+		return (
+			<div className={styles.spinner}>
+				<LoadingSpinner />
+			</div>
+		);
 	}
 
 	if (error) {
@@ -71,6 +72,7 @@ export const FilmsPage = () => {
 					icon={true}
 					onChange={(e) => setSearchQuery(e.target.value)}
 				/>
+				{isLoading && !data && <LoadingSpinner />}
 				{data.search_result.length === 0 ? (
 					<div className={styles.empty}>
 						<h1 className={styles.title}>Фильмы не найдены</h1>

@@ -11,7 +11,7 @@ export interface IGetFilmsProps {
 export const apiSlice = createApi({
 	reducerPath: "api",
 	baseQuery: fetchBaseQuery({ baseUrl: URL }),
-	keepUnusedDataFor: 100,
+	keepUnusedDataFor: 1,
 	endpoints: (builder) => ({
 		getFilms: builder.query<IGetFilmsProps, IQueryParams>({
 			query: (params) => {
