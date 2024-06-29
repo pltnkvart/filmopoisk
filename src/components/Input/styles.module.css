@@ -9,6 +9,11 @@ input:focus {
 	height: 40px;
 	border: none;
 	width: 40%;
+	cursor: pointer;
+}
+
+.input:hover {
+	border: 1px solid #ced2d6;
 }
 
 .search {

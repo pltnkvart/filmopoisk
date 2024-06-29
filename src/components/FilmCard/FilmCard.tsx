@@ -1,13 +1,21 @@
 import { ShortMovieInfo } from "../../types/types";
+import { Rating } from "../Rating/Rating";
 import styles from "./styles.module.css";
 
 interface IFilmCardProps {
 	film: ShortMovieInfo;
+	onClick?: (film: ShortMovieInfo) => void;
 }
 
-export const FilmCard = ({ film }: IFilmCardProps) => {
+export const FilmCard = ({ film, onClick }: IFilmCardProps) => {
+	const handleClick = () => {
+		if (onClick) {
+			onClick(film);
+		}
+	};
+
 	return (
-		<div className={styles.card}>
+		<div className={styles.card} onClick={handleClick}>
 			<img className={styles.image} src={film.poster}></img>
 			<table className={styles.table}>
 				<tbody>
@@ -32,7 +40,13 @@ export const FilmCard = ({ film }: IFilmCardProps) => {
 					</tr>
 				</tbody>
 			</table>
-			Рейтинг: {film.rating}
+			<div className={styles.rating}>
+				<Rating
+					totalStars={5}
+					starsSelected={Math.round(Number(film.rating))}
+					onRate={() => {}}
+				/>
+			</div>
 		</div>
 	);
 };

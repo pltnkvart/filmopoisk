@@ -2,35 +2,25 @@ import { useParams } from "react-router-dom";
 import { apiSlice } from "../../../store/filmsSlice";
 
 import styles from "./styles.module.css";
+import { ActorCard } from "../../ActorCard/ActorCard";
+import { FilmInfoCard } from "../../FilmInfoCard/FilmInfoCard";
 
 export const FilmPage = () => {
 	const { filmId } = useParams();
-	const { data } = apiSlice.useGetFilmByIdQuery(Number(filmId!)!);
+	const { data } = apiSlice.useGetFilmByIdQuery(Number(filmId!));
 
 	if (!data) return null;
 
 	console.log(data);
 
 	return (
-		<>
-			<img className={styles.image} src={data.poster}></img>
-			<h1>{data.title}</h1>
-			<p>
-				<b>Жанр: </b>
-				{data.genre}
-			</p>
-			<p>
-				<b>Год выпуска: </b>
-				{data.genre}
-			</p>
-			<p>
-				<b>Рейтинг: </b>
-				{data.rating}
-			</p>
-			<p>
-				<b>Описание</b>
-			</p>
-			<p>{data.description}</p>
-		</>
+		<div className={styles.page}>
+			<FilmInfoCard film={data} />
+			<div className={styles.actors}>
+				{data.actors.map((actor, index) => (
+					<ActorCard key={index} actor={actor} />
+				))}
+			</div>
+		</div>
 	);
 };
