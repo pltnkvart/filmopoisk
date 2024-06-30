@@ -1,18 +1,29 @@
 import styles from "./styles.module.css";
 
-interface IStarProps {
+export interface IStarProps {
 	value: number;
 	selected: boolean;
-	onClick: () => void;
+	onClick: (value: number) => void;
 }
 
-export const Star = ({ value, selected = false, onClick }: IStarProps) => (
-	<div className={styles.star} onClick={onClick}>
-		{selected ? (
-			<img src="public/images/starActive.svg" alt="" />
-		) : (
-			<img src="public/images/starDisabled.svg" alt="" />
-		)}
-		<span>{value}</span>
-	</div>
-);
+export const Star = ({ value, selected = false, onClick }: IStarProps) => {
+	const hovered = false;
+
+	return (
+		<div className={styles.star} onClick={() => onClick(value)}>
+			<span key={value} className={styles.star}>
+				{hovered ? (
+					<img src="public/images/starHover.svg"></img>
+				) : (
+					<img
+						src={`public/images/${
+							selected ? "starActive.svg" : "starDisabled.svg"
+						}`}
+						alt=""
+					/>
+				)}
+			</span>
+			<span>{value}</span>
+		</div>
+	);
+};

@@ -24,12 +24,7 @@ export const SelectDropdown = ({
 			</option>
 			{Object.entries(options).map(([value, label]) => {
 				return (
-					<option
-						className={styles.option}
-						value={value}
-						key={value}
-						selected={currentValue === value}
-					>
+					<option className={styles.option} value={value} key={value}>
 						{label}
 					</option>
 				);

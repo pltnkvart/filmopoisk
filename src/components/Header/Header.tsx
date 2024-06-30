@@ -1,52 +1,39 @@
-import { useState } from "react";
-import { useUserContext } from "../../hooks/useUserContext";
-import { Modal } from "../Modal/Modal";
 import { Button } from "../Button/Button";
 import styles from "./styles.module.css";
+import { useAppDispatch, useAppSelector } from "../../store/store";
+import { setToken } from "../../store/authSlice";
+import { setOpen } from "../../store/modalSlice";
 
 export const Header = () => {
-	const { user, login, logout } = useUserContext();
-	const [isVisible, setIsVisible] = useState(false);
+	const user = useAppSelector((state) => state.userSlice.logged);
+
+	const dispatch = useAppDispatch();
+
+	const handleLogout = () => {
+		dispatch(setToken(""));
+		dispatch(setOpen(false));
+	};
 
 	return (
 		<header className={styles.header}>
 			<h1 className={styles.title}>Фильмопоиск</h1>
-			{/* {user && <span>{user.name}</span>} - вывести ИКОНКУ!!! */}
 			<div className={styles.right}>
 				{user ? (
-					<Button onClick={logout} transparent={true}>
+					// {/* {user && <span>{user.name}</span>} - вывести ИКОНКУ!!! */}
+					<Button onClick={handleLogout} transparent={true}>
 						Выйти
 					</Button>
 				) : (
 					<Button
-						onClick={() => setIsVisible(true)}
+						onClick={() => {
+							dispatch(setOpen(true));
+						}}
 						transparent={false}
 					>
 						Войти
 					</Button>
 				)}
 			</div>
-
-			{isVisible && (
-				<Modal
-					title={"Авторизация"}
-					onClose={() => setIsVisible(false)}
-				>
-					<label htmlFor="login">Логин</label>
-					<input type="text" id="login" />
-					<label htmlFor="password">Пароль</label>
-					<input type="password" id="password" />
-					<Button type="submit" onClick={login} transparent={false}>
-						Войти
-					</Button>
-					<Button
-						onClick={() => setIsVisible(false)}
-						transparent={true}
-					>
-						Отменить
-					</Button>
-				</Modal>
-			)}
 		</header>
 	);
 };

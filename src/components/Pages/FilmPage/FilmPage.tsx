@@ -1,5 +1,5 @@
 import { useParams } from "react-router-dom";
-import { apiSlice } from "../../../store/filmsSlice";
+import { apiSlice } from "../../../store/api";
 
 import styles from "./styles.module.css";
 import { ActorCard } from "../../ActorCard/ActorCard";

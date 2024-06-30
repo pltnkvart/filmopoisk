@@ -18,8 +18,14 @@
 	text-align: left;
 }
 
-.star:hover {
-	background-image: url("/public/images/starHover.svg");
-	background-position: 0 0;
-	background-repeat: no-repeat;
+input[type="radio"] {
+	display: none;
+}
+
+.login {
+	font-size: 12px;
+	display: flex;
+	flex-direction: column;
+	gap: 12px;
+	align-items: end;
 }

@@ -5,24 +5,25 @@ import classNames from "classnames";
 
 export interface IModalProps {
 	title: string;
+	isOpen: boolean;
 	children: React.ReactNode;
 	onClose: () => void;
 }
 
-export const Modal = ({ title, children, onClose }: IModalProps) => {
+export const Modal = ({ title, children, isOpen, onClose }: IModalProps) => {
 	return createPortal(
 		<>
 			<div
 				onClick={onClose}
 				className={classNames(styles.root, {
-					[styles.interactive]: !!onClose,
+					[styles.interactive]: isOpen,
 				})}
 			/>
 			<div
 				style={{
 					backgroundColor: "white",
 					width: "344px",
-					height: "300px",
+					height: "fit-content",
 					position: "absolute",
 					top: "200px",
 					left: "50%",
@@ -34,15 +35,19 @@ export const Modal = ({ title, children, onClose }: IModalProps) => {
 					flexDirection: "column",
 				}}
 			>
-				<div className={styles.top}>
-					<h1 className={styles.title}>{title}</h1>
-					<img
-						className={styles.closeBtn}
-						src="public/images/close.svg"
-						onClick={onClose}
-					/>
+				<div className={styles.wrapper}>
+					<div className={styles.top}>
+						<h1 className={styles.title}>{title}</h1>
+						<img
+							className={styles.closeBtn}
+							src="public/images/close.svg"
+							onClick={onClose}
+						/>
+					</div>
+					<div className={styles.content} onClick={onClose}>
+						{children}
+					</div>
 				</div>
-				<div>{children}</div>
 			</div>
 		</>,
 		document.body

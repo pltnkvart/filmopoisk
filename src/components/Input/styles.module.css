@@ -8,7 +8,6 @@ input:focus {
 	padding: 12px;
 	height: 40px;
 	border: none;
-	width: 40%;
 	cursor: pointer;
 }
 
@@ -25,4 +24,8 @@ input:focus {
 
 .input:focus {
 	outline: 1px solid #ff5500;
+}
+
+.border {
+	border: 1px solid #e1e3e6;
 }

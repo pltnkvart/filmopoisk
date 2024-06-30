@@ -16,7 +16,6 @@ export const FilmInfoCard = ({ film }: IFilmInfoCardProps) => {
 					<div className={styles.right}>
 						<Rating
 							starsSelected={Math.round(Number(film.rating))}
-							onRate={() => {}}
 						/>
 					</div>
 				</div>
@@ -33,7 +32,7 @@ export const FilmInfoCard = ({ film }: IFilmInfoCardProps) => {
 					<p>
 						<b>Описание:</b>
 					</p>
-					<p>{film.description}</p>
+					<p className={styles.description}>{film.description}</p>
 				</div>
 			</div>
 		</div>

@@ -5,7 +5,7 @@ import { FilmsList } from "../../FilmsList/FilmsList";
 import { FilterMenu } from "../../FilterMenu/FilterMenu";
 import styles from "./styles.module.css";
 import { InputArea } from "../../Input/InputSearch";
-import { apiSlice } from "../../../store/filmsSlice";
+import { apiSlice } from "../../../store/api";
 import { Pagination } from "../../Pagination/Pagination";
 import { useSearchParams } from "react-router-dom";
 import { LoadingSpinner } from "../../LoadingSpinner/LoadingSpinner";
@@ -80,6 +80,7 @@ export const FilmsPage = () => {
 			/>
 			<div className={styles.content}>
 				<InputArea
+					type="text"
 					placeholder="Название фильма"
 					icon={true}
 					onChange={handleSearchChange}
