@@ -1,50 +1,45 @@
 import { useState } from 'react';
-import { IStarProps, Star } from './Star';
-
 import styles from './styles.module.css';
-import { useAppSelector } from '../../store/store';
+import { StarIcon } from '../Icons/StarIcon';
 
 interface IRatingProps {
-  starsSelected: number;
-  totalStars?: number;
+  rating: string;
+  totalRatesCount?: number;
+  onClick: (event: React.MouseEvent<HTMLInputElement>, rating: number) => void;
 }
 
-export const Rating = ({ starsSelected, totalStars = 5 }: IRatingProps) => {
-  const [rating, setRating] = useState(starsSelected);
-  const user = useAppSelector((state) => state.userSlice.logged);
+export const Rating = ({
+  rating,
+  totalRatesCount = 5,
+  onClick,
+}: IRatingProps) => {
+  const roundedRating = Math.round(Number(rating));
+  const [hover, setHover] = useState<number | null>(null);
 
-  return user ? (
+  return (
     <div className={styles.rating}>
-      {[...Array(totalStars)].map((_, i) => {
-        const currentRating = i + 1;
+      {[...Array(totalRatesCount)].map((_, index) => {
+        const value = index + 1;
 
-        const isSelected = currentRating <= rating;
-
-        const starProps: IStarProps = {
-          value: currentRating,
-          selected: isSelected,
-          onClick: () => setRating(currentRating),
-        };
-
-        return <Star key={i} {...starProps} />;
+        return (
+          <div className={styles.star} key={index}>
+            <input
+              type="radio"
+              name="rating"
+              value={value}
+              onClick={(e) => onClick(e, value)}
+            />
+            <span
+              className={styles.star}
+              onMouseEnter={() => setHover(value)}
+              onMouseLeave={() => setHover(null)}
+            >
+              <StarIcon isActive={value <= (hover || roundedRating)} />
+              <span>{value}</span>
+            </span>
+          </div>
+        );
       })}
-    </div>
-  ) : (
-    <div className={styles.login}>
-      <div className={styles.rating}>
-        {[...Array(totalStars)].map((_, i) => {
-          const currentRating = i + 1;
-
-          const starProps: IStarProps = {
-            value: currentRating,
-            selected: false,
-            onClick: () => {},
-          };
-
-          return <Star key={i} {...starProps} />;
-        })}
-      </div>
-      Войдите чтобы увидеть рейтинг
     </div>
   );
 };

@@ -21,7 +21,7 @@ export const ArrowIcon = ({ isActive, className }: IArrowIconProps) => (
             height="48"
             rx="24"
             fill="white"
-            shape-rendering="crispEdges"
+            shapeRendering="crispEdges"
           />
           <path
             d="M23.88 39.56C23.6267 39.56 23.3734 39.4667 23.1734 39.2667C22.7867 38.88 22.7867 38.24 23.1734 37.8534L31.8667 29.16C32.5067 28.52 32.5067 27.48 31.8667 26.84L23.1734 18.1467C22.7867 17.76 22.7867 17.12 23.1734 16.7334C23.56 16.3467 24.2 16.3467 24.5867 16.7334L33.28 25.4267C33.96 26.1067 34.3467 27.0267 34.3467 28C34.3467 28.9734 33.9734 29.8934 33.28 30.5734L24.5867 39.2667C24.3867 39.4534 24.1334 39.56 23.88 39.56Z"
@@ -36,9 +36,9 @@ export const ArrowIcon = ({ isActive, className }: IArrowIconProps) => (
             width="56"
             height="56"
             filterUnits="userSpaceOnUse"
-            color-interpolation-filters="sRGB"
+            colorInterpolationFilters="sRGB"
           >
-            <feFlood flood-opacity="0" result="BackgroundImageFix" />
+            <feFlood floodOpacity="0" result="BackgroundImageFix" />
             <feColorMatrix
               in="SourceAlpha"
               type="matrix"
@@ -82,7 +82,7 @@ export const ArrowIcon = ({ isActive, className }: IArrowIconProps) => (
             height="48"
             rx="24"
             fill="#E9EAED"
-            shape-rendering="crispEdges"
+            shapeRendering="crispEdges"
           />
           <path
             d="M23.88 39.56C23.6267 39.56 23.3734 39.4667 23.1734 39.2667C22.7867 38.88 22.7867 38.24 23.1734 37.8534L31.8667 29.16C32.5067 28.52 32.5067 27.48 31.8667 26.84L23.1734 18.1467C22.7867 17.76 22.7867 17.12 23.1734 16.7334C23.56 16.3467 24.2 16.3467 24.5867 16.7334L33.28 25.4267C33.96 26.1067 34.3467 27.0267 34.3467 28C34.3467 28.9734 33.9734 29.8934 33.28 30.5734L24.5867 39.2667C24.3867 39.4534 24.1334 39.56 23.88 39.56Z"
@@ -97,9 +97,9 @@ export const ArrowIcon = ({ isActive, className }: IArrowIconProps) => (
             width="56"
             height="56"
             filterUnits="userSpaceOnUse"
-            color-interpolation-filters="sRGB"
+            colorInterpolationFilters="sRGB"
           >
-            <feFlood flood-opacity="0" result="BackgroundImageFix" />
+            <feFlood floodOpacity="0" result="BackgroundImageFix" />
             <feColorMatrix
               in="SourceAlpha"
               type="matrix"

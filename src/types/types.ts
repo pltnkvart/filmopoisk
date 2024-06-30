@@ -65,3 +65,8 @@ export interface ILogin {
   username: string;
   password: string;
 }
+
+export interface RateResult {
+  movieId: string;
+  user_rate: number;
+}

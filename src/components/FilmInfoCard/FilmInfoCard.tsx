@@ -1,5 +1,5 @@
 import { FullMovieInfo } from '../../types/types';
-import { Rating } from '../Rating/Rating';
+import { FilmRating } from '../Rating/FilmRating';
 import styles from './styles.module.css';
 
 interface IFilmInfoCardProps {
@@ -14,7 +14,7 @@ export const FilmInfoCard = ({ film }: IFilmInfoCardProps) => {
         <div className={styles.header}>
           <p className={styles.title}>{film.title}</p>
           <div className={styles.right}>
-            <Rating starsSelected={Math.round(Number(film.rating))} />
+            <FilmRating movieId={film.id} currMovieRating={film.rating} />
           </div>
         </div>
         <div className={styles.info}>

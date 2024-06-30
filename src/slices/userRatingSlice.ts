@@ -1,31 +1,33 @@
-import { type PayloadAction, createSlice } from '@reduxjs/toolkit';
+import { PayloadAction, createSlice } from '@reduxjs/toolkit';
 
-interface LocalUserRates {
-  [id: string]: number;
+export interface UserRating {
+  id: string;
+  rating: number;
 }
 
-export const LOCALSTORAGE_USER_RATES_KEY = 'userRates';
+export interface LocalUserRates {
+  [key: string]: number;
+}
 
-const initialRatesStr = localStorage.getItem(LOCALSTORAGE_USER_RATES_KEY) ?? '';
+const LOCALSTORAGE_USER_RATES_KEY = 'userRates';
 
-const initialRates = initialRatesStr ? JSON.parse(initialRatesStr) : {};
+const initialUserRates: LocalUserRates = localStorage.getItem(
+  LOCALSTORAGE_USER_RATES_KEY,
+)
+  ? JSON.parse(localStorage.getItem(LOCALSTORAGE_USER_RATES_KEY) as string)
+  : {};
 
 const userRatesSlice = createSlice({
   name: 'userRates',
-  initialState: initialRates,
+  initialState: initialUserRates,
   reducers: {
-    set: (state, { payload }: PayloadAction<LocalUserRates>) => {
-      return { ...state, ...payload };
-    },
-    setSingle: (
-      state,
-      { payload }: PayloadAction<{ id: string; value: number }>,
-    ) => {
-      return { ...state, [payload.id]: payload.value };
+    setSingle: (state, { payload }: PayloadAction<UserRating>) => {
+      state[payload.id] = payload.rating;
+      localStorage.setItem(LOCALSTORAGE_USER_RATES_KEY, JSON.stringify(state));
     },
   },
 });
 
-export const { set, setSingle } = userRatesSlice.actions;
+export const { setSingle } = userRatesSlice.actions;
 const userRatesReducer = userRatesSlice.reducer;
 export default userRatesReducer;

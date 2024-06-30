@@ -14,6 +14,8 @@ export const FilmPage = () => {
   return (
     <div className={styles.page}>
       <FilmInfoCard film={data} />
+      <div className={styles.actorBlock}></div>
+      <p className={styles.title}>Актеры:</p>
       <div className={styles.actors}>
         {data.actors.map((actor, index) => (
           <ActorCard key={index} actor={actor} />
