@@ -79,12 +79,14 @@ export const FilmsPage = () => {
         onChangeYear={handleYearChange}
       />
       <div className={styles.content}>
-        <InputArea
-          type="text"
-          placeholder="Название фильма"
-          icon={true}
-          onChange={handleSearchChange}
-        />
+        <div className={styles.input}>
+          <InputArea
+            type="text"
+            placeholder="Название фильма"
+            icon={true}
+            onChange={handleSearchChange}
+          />
+        </div>
         {isLoading && !data && <LoadingSpinner />}
         {data?.search_result.length === 0 ? (
           <div className={styles.empty}>

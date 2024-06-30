@@ -42,3 +42,7 @@
   align-items: center;
   height: calc(100vh - 120px);
 }
+
+.input {
+  width: 40%;
+}
