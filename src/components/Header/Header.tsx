@@ -1,8 +1,8 @@
 import { Button } from "../Button/Button";
 import styles from "./styles.module.css";
 import { useAppDispatch, useAppSelector } from "../../store/store";
-import { setToken } from "../../store/authSlice";
-import { setOpen } from "../../store/modalSlice";
+import { setToken } from "../../slices/authSlice";
+import { setOpen } from "../../slices/modalSlice";
 import { LoginModal } from "../LoginModal/LoginModal";
 
 export const Header = () => {

@@ -3,10 +3,10 @@ import { useAppDispatch, useAppSelector } from "../../store/store";
 import { Button } from "../Button/Button";
 import { InputArea } from "../Input/InputSearch";
 import styles from "./styles.module.css";
-import { apiSlice } from "../../store/api";
-import { setToken } from "../../store/authSlice";
+import { apiSlice } from "../../api/api";
+import { setToken } from "../../slices/authSlice";
 import { Modal } from "../Modal/Modal";
-import { setOpen } from "../../store/modalSlice";
+import { setOpen } from "../../slices/modalSlice";
 
 export const LoginModal = () => {
 	const open = useAppSelector((state) => state.modalSlice);

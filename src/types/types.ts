@@ -55,3 +55,13 @@ export interface IQueryParams {
 	page?: number;
 	limit?: number;
 }
+
+export interface IGetFilmsProps {
+	search_result: ShortMovieInfo[];
+	total_pages: number;
+}
+
+export interface ILogin {
+	username: string;
+	password: string;
+}

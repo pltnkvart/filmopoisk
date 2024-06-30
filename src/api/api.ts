@@ -1,17 +1,12 @@
 import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
-import { FullMovieInfo, IQueryParams, ShortMovieInfo } from "../types/types";
+import {
+	FullMovieInfo,
+	IGetFilmsProps,
+	ILogin,
+	IQueryParams,
+} from "../types/types";
 
 export const BASE_URL = "http://localhost:3030/api/v1";
-
-export interface IGetFilmsProps {
-	search_result: ShortMovieInfo[];
-	total_pages: number;
-}
-
-export interface ILogin {
-	username: string;
-	password: string;
-}
 
 export const apiSlice = createApi({
 	reducerPath: "api",
