@@ -31,10 +31,23 @@ export const FilmRating = ({ movieId, currMovieRating }: IFilmRatingProps) => {
       });
 
       console.log(data);
+      if (!data) return null;
 
       if (data.data?.movieId) {
         dispatch(setSingle({ id: movieId, rating: rating }));
       }
+
+      dispatch(
+        apiSlice.util.updateQueryData(
+          'getFilmById',
+          Number(movieId),
+          (draft) => {
+            if (draft && data.data) {
+              draft.rating = data.data?.newAverageRate;
+            }
+          },
+        ),
+      );
     } catch (error) {
       console.error('Failed to rate the movie:', error);
     }
