@@ -3,6 +3,7 @@ import styles from "./styles.module.css";
 import { useAppDispatch, useAppSelector } from "../../store/store";
 import { setToken } from "../../store/authSlice";
 import { setOpen } from "../../store/modalSlice";
+import { LoginModal } from "../LoginModal/LoginModal";
 
 export const Header = () => {
 	const user = useAppSelector((state) => state.userSlice.logged);
@@ -19,10 +20,16 @@ export const Header = () => {
 			<h1 className={styles.title}>Фильмопоиск</h1>
 			<div className={styles.right}>
 				{user ? (
-					// {/* {user && <span>{user.name}</span>} - вывести ИКОНКУ!!! */}
-					<Button onClick={handleLogout} transparent={true}>
-						Выйти
-					</Button>
+					<>
+						<img
+							className={styles.profile}
+							src="public/images/person.svg"
+							alt="person"
+						/>
+						<Button onClick={handleLogout} transparent={true}>
+							Выйти
+						</Button>
+					</>
 				) : (
 					<Button
 						onClick={() => {
@@ -34,6 +41,7 @@ export const Header = () => {
 					</Button>
 				)}
 			</div>
+			<LoginModal />
 		</header>
 	);
 };

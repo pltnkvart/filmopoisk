@@ -12,7 +12,7 @@ export interface IModalProps {
 
 export const Modal = ({ title, children, isOpen, onClose }: IModalProps) => {
 	return createPortal(
-		<>
+		<div style={{ display: isOpen ? "block" : "none" }}>
 			<div
 				onClick={onClose}
 				className={classNames(styles.root, {
@@ -44,12 +44,15 @@ export const Modal = ({ title, children, isOpen, onClose }: IModalProps) => {
 							onClick={onClose}
 						/>
 					</div>
-					<div className={styles.content} onClick={onClose}>
+					<div
+						className={styles.content}
+						onClick={(e) => e.stopPropagation()}
+					>
 						{children}
 					</div>
 				</div>
 			</div>
-		</>,
+		</div>,
 		document.body
 	);
 };

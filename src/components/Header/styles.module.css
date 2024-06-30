@@ -19,20 +19,15 @@
 }
 
 .right {
+	display: flex;
 	margin-left: auto;
 	width: fit-content;
+	gap: 16px;
 }
 
-.form {
-	display: flex;
-	flex-direction: column;
-	gap: 8px;
-	width: 100%;
-}
-
-.controls {
-	display: flex;
-	flex-direction: row;
-	gap: 8px;
-	margin-top: 12px;
+.profile {
+	height: 40px;
+	background-color: white;
+	border-radius: 32px;
+	padding: 8px;
 }
