@@ -2,6 +2,7 @@ import { createPortal } from 'react-dom';
 
 import styles from './styles.module.css';
 import classNames from 'classnames';
+import { CloseIcon } from '../Icons/CloseIcon';
 
 export interface IModalProps {
   title: string;
@@ -38,11 +39,7 @@ export const Modal = ({ title, children, isOpen, onClose }: IModalProps) => {
         <div className={styles.wrapper}>
           <div className={styles.top}>
             <h1 className={styles.title}>{title}</h1>
-            <img
-              className={styles.closeBtn}
-              src="public/images/close.svg"
-              onClick={onClose}
-            />
+            <CloseIcon className={styles.closeBtn} onClick={onClose} />
           </div>
           <div className={styles.content} onClick={(e) => e.stopPropagation()}>
             {children}

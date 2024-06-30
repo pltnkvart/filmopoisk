@@ -27,6 +27,10 @@
 
 .profile {
   height: 40px;
+  width: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   background-color: white;
   border-radius: 32px;
   padding: 8px;

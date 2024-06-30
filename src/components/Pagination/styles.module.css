@@ -26,4 +26,6 @@ button {
   color: inherit;
   background-color: transparent;
   cursor: pointer;
+  height: 32px;
+  width: 32px;
 }

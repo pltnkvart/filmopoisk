@@ -4,6 +4,7 @@ import { useAppDispatch, useAppSelector } from '../../store/store';
 import { setToken } from '../../slices/authSlice';
 import { setOpen } from '../../slices/modalSlice';
 import { LoginModal } from '../LoginModal/LoginModal';
+import { UserIcon } from '../Icons/UserIcon';
 
 export const Header = () => {
   const user = useAppSelector((state) => state.userSlice.logged);
@@ -21,11 +22,12 @@ export const Header = () => {
       <div className={styles.right}>
         {user ? (
           <>
-            <img
+            {/* <img
               className={styles.profile}
               src="public/images/person.svg"
               alt="person"
-            />
+            /> */}
+            <UserIcon className={styles.profile} />
             <Button onClick={handleLogout} transparent={true}>
               Выйти
             </Button>

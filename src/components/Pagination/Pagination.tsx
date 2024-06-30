@@ -1,3 +1,4 @@
+import { ArrowIcon } from '../Icons/ArrowIcon';
 import styles from './styles.module.css';
 
 interface IPaginationProps {
@@ -18,31 +19,15 @@ export const Pagination = ({
         onClick={() => onChange(currentPage - 1)}
         disabled={currentPage === 1}
       >
-        <img
-          className={styles.icon}
-          src={
-            currentPage === 1
-              ? 'public/images/arrowDisabled.svg'
-              : 'public/images/arrowActive.svg'
-          }
-          alt="<"
-        />
+        <ArrowIcon isActive={currentPage === 1} className={styles.icon} />
       </button>
       <p className={styles.page}>{currentPage}</p>
       <button
-        className={styles.next}
         onClick={() => onChange(currentPage + 1)}
         disabled={currentPage === total_pages}
+        className={styles.icon}
       >
-        <img
-          className={styles.icon}
-          src={
-            currentPage === total_pages
-              ? 'public/images/arrowDisabled.svg'
-              : 'public/images/arrowActive.svg'
-          }
-          alt=">"
-        />
+        <ArrowIcon isActive={currentPage === total_pages} />
       </button>
     </div>
   );

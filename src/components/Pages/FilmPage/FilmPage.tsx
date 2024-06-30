@@ -11,8 +11,6 @@ export const FilmPage = () => {
 
   if (!data) return null;
 
-  console.log(data);
-
   return (
     <div className={styles.page}>
       <FilmInfoCard film={data} />

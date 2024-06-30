@@ -1,3 +1,4 @@
+import { StarIcon } from '../Icons/StarIcon';
 import styles from './styles.module.css';
 
 export interface IStarProps {
@@ -15,12 +16,7 @@ export const Star = ({ value, selected = false, onClick }: IStarProps) => {
         {hovered ? (
           <img src="public/images/starHover.svg"></img>
         ) : (
-          <img
-            src={`public/images/${
-              selected ? 'starActive.svg' : 'starDisabled.svg'
-            }`}
-            alt=""
-          />
+          <StarIcon isActive={selected} />
         )}
       </span>
       <span>{value}</span>
