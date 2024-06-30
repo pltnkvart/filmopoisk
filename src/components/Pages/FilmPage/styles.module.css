@@ -1,10 +1,10 @@
 .page {
-	padding: 32px;
+  padding: 32px;
 }
 
 .actors {
-	display: flex;
-	flex-direction: row;
-	gap: 24px;
-	padding-top: 24px;
+  display: flex;
+  flex-direction: row;
+  gap: 24px;
+  padding-top: 24px;
 }

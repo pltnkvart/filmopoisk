@@ -1,44 +1,44 @@
 .page {
-	padding: 20px 32px;
-	display: flex;
-	height: 100%;
+  padding: 20px 32px;
+  display: flex;
+  height: 100%;
 }
 
 .content {
-	display: flex;
-	flex-direction: column;
-	gap: 16px;
-	width: 80%;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  width: 80%;
 }
 
 .empty {
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
-	align-items: center;
-	height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
 }
 
 .title {
-	font-family: "Inter";
-	font-size: 16px;
-	font-weight: 500;
-	line-height: 20px;
-	text-align: center;
+  font-family: 'Inter';
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 20px;
+  text-align: center;
 }
 
 .subtitle {
-	font-family: "Inter";
-	font-size: 14px;
-	font-weight: 400;
-	line-height: 20px;
-	text-align: center;
+  font-family: 'Inter';
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 20px;
+  text-align: center;
 }
 
 .spinner {
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
-	align-items: center;
-	height: calc(100vh - 120px);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: calc(100vh - 120px);
 }

@@ -1,21 +1,21 @@
 .card {
-	display: flex;
-	flex-direction: column;
-	gap: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
 }
 
 .image {
-	width: 160px;
-	height: 264px;
-	opacity: 0px;
-	border-radius: 8px;
-	object-fit: cover;
+  width: 160px;
+  height: 264px;
+  opacity: 0px;
+  border-radius: 8px;
+  object-fit: cover;
 }
 
 .name {
-	font-family: "SF Pro Display";
-	font-size: 14px;
-	font-weight: 400;
-	line-height: 20px;
-	text-align: left;
+  font-family: 'SF Pro Display';
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 20px;
+  text-align: left;
 }

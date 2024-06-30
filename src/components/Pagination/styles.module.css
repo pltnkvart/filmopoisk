@@ -1,29 +1,29 @@
 .list {
-	display: grid;
-	gap: 16px;
+  display: grid;
+  gap: 16px;
 }
 
 .prev {
-	transform: scaleX(-1);
+  transform: scaleX(-1);
 }
 
 .page {
-	margin: 6px 12px;
+  margin: 6px 12px;
 }
 
 .icon {
-	height: 32px;
+  height: 32px;
 }
 
 .pagination {
-	display: flex;
+  display: flex;
 }
 
 button {
-	padding: 0;
-	border: none;
-	font: inherit;
-	color: inherit;
-	background-color: transparent;
-	cursor: pointer;
+  padding: 0;
+  border: none;
+  font: inherit;
+  color: inherit;
+  background-color: transparent;
+  cursor: pointer;
 }

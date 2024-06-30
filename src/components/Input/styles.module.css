@@ -1,31 +1,31 @@
 textarea:focus,
 input:focus {
-	outline: none;
+  outline: none;
 }
 
 .input {
-	border-radius: 8px;
-	padding: 12px;
-	height: 40px;
-	border: none;
-	cursor: pointer;
+  border-radius: 8px;
+  padding: 12px;
+  height: 40px;
+  border: none;
+  cursor: pointer;
 }
 
 .input:hover {
-	border: 1px solid #ced2d6;
+  border: 1px solid #ced2d6;
 }
 
 .search {
-	background-image: url("/public/images/search.svg");
-	background-position: 12px 12px;
-	background-repeat: no-repeat;
-	padding-left: 40px;
+  background-image: url('/public/images/search.svg');
+  background-position: 12px 12px;
+  background-repeat: no-repeat;
+  padding-left: 40px;
 }
 
 .input:focus {
-	outline: 1px solid #ff5500;
+  outline: 1px solid #ff5500;
 }
 
 .border {
-	border: 1px solid #e1e3e6;
+  border: 1px solid #e1e3e6;
 }

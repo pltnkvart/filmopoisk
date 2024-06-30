@@ -1,13 +1,13 @@
 .form {
-	display: flex;
-	flex-direction: column;
-	gap: 8px;
-	width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  width: 100%;
 }
 
 .controls {
-	display: flex;
-	flex-direction: row;
-	gap: 8px;
-	margin-top: 12px;
+  display: flex;
+  flex-direction: row;
+  gap: 8px;
+  margin-top: 12px;
 }
