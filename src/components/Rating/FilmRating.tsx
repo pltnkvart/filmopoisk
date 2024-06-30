@@ -41,7 +41,11 @@ export const FilmRating = ({ movieId, currMovieRating }: IFilmRatingProps) => {
   };
 
   return user ? (
-    <Rating rating={userRating ?? currMovieRating} onClick={handler} />
+    <Rating
+      id={movieId}
+      rating={userRating ?? currMovieRating}
+      onClick={handler}
+    />
   ) : (
     <div className={styles.login}>Войдите чтобы увидеть рейтинг</div>
   );

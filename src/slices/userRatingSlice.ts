@@ -17,13 +17,14 @@ const initialUserRates: LocalUserRates = localStorage.getItem(
   ? JSON.parse(localStorage.getItem(LOCALSTORAGE_USER_RATES_KEY) as string)
   : {};
 
+console.log(initialUserRates);
+
 const userRatesSlice = createSlice({
   name: 'userRates',
   initialState: initialUserRates,
   reducers: {
     setSingle: (state, { payload }: PayloadAction<UserRating>) => {
       state[payload.id] = payload.rating;
-      console.log(state);
       localStorage.setItem(LOCALSTORAGE_USER_RATES_KEY, JSON.stringify(state));
     },
   },

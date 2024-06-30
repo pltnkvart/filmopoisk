@@ -3,6 +3,7 @@ interface IStarIconProps {
   isActive: boolean;
   children?: React.ReactNode;
   value?: number;
+  id?: string;
 }
 
 export const StarIcon = ({
@@ -10,8 +11,9 @@ export const StarIcon = ({
   isActive,
   children,
   value,
+  ...props
 }: IStarIconProps) => (
-  <label htmlFor={`rating-${value}`} className={className}>
+  <label htmlFor={`rating-${value}-${props.id}`} className={className}>
     {isActive ? (
       <svg
         width="16"

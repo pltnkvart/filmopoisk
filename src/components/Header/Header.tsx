@@ -14,6 +14,7 @@ export const Header = () => {
   const handleLogout = () => {
     dispatch(setToken(''));
     dispatch(setOpen(false));
+    localStorage.clear();
   };
 
   return (
@@ -22,11 +23,6 @@ export const Header = () => {
       <div className={styles.right}>
         {user ? (
           <>
-            {/* <img
-              className={styles.profile}
-              src="public/images/person.svg"
-              alt="person"
-            /> */}
             <UserIcon className={styles.profile} />
             <Button onClick={handleLogout} transparent={true}>
               Выйти
