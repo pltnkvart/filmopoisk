@@ -74,9 +74,12 @@ export const apiSlice = createApi({
         method: 'POST',
       }),
     }),
-    postRateMovie: builder.mutation<{ token: string }, RateResult>({
-      query: (body) => ({
-        body: body,
+    postRateMovie: builder.mutation<
+      { movieId: string; newAverageRate: string; newTotalRatesCount: number },
+      RateResult
+    >({
+      query: ({ movieId, user_rate }) => ({
+        body: { movieId, user_rate },
         url: '/rateMovie',
         method: 'POST',
       }),

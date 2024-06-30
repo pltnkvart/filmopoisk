@@ -23,6 +23,7 @@ const userRatesSlice = createSlice({
   reducers: {
     setSingle: (state, { payload }: PayloadAction<UserRating>) => {
       state[payload.id] = payload.rating;
+      console.log(state);
       localStorage.setItem(LOCALSTORAGE_USER_RATES_KEY, JSON.stringify(state));
     },
   },

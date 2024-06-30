@@ -28,3 +28,7 @@ input[type='radio'] {
   gap: 12px;
   align-items: end;
 }
+
+.icon {
+  cursor: pointer;
+}

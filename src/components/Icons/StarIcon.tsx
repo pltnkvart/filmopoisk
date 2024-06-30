@@ -1,10 +1,17 @@
 interface IStarIconProps {
   className?: string;
   isActive: boolean;
+  children?: React.ReactNode;
+  value?: number;
 }
 
-export const StarIcon = ({ className, isActive }: IStarIconProps) => (
-  <div className={className}>
+export const StarIcon = ({
+  className,
+  isActive,
+  children,
+  value,
+}: IStarIconProps) => (
+  <label htmlFor={`rating-${value}`} className={className}>
     {isActive ? (
       <svg
         width="16"
@@ -32,5 +39,6 @@ export const StarIcon = ({ className, isActive }: IStarIconProps) => (
         />
       </svg>
     )}
-  </div>
+    {children}
+  </label>
 );

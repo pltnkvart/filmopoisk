@@ -3,7 +3,7 @@ import styles from './styles.module.css';
 import { StarIcon } from '../Icons/StarIcon';
 
 interface IRatingProps {
-  rating: string;
+  rating: string | number;
   totalRatesCount?: number;
   onClick: (event: React.MouseEvent<HTMLInputElement>, rating: number) => void;
 }
@@ -23,20 +23,26 @@ export const Rating = ({
 
         return (
           <div className={styles.star} key={index}>
-            <input
-              type="radio"
-              name="rating"
-              value={value}
-              onClick={(e) => onClick(e, value)}
-            />
-            <span
+            <label
+              htmlFor={`rating-${value}`}
               className={styles.star}
               onMouseEnter={() => setHover(value)}
               onMouseLeave={() => setHover(null)}
             >
-              <StarIcon isActive={value <= (hover || roundedRating)} />
-              <span>{value}</span>
-            </span>
+              <input
+                type="radio"
+                name="rating"
+                id={`rating-${value}`}
+                value={value}
+                onClick={(e) => onClick(e, value)}
+              />
+              <StarIcon
+                isActive={value <= (hover || roundedRating)}
+                className={styles.star}
+                children={<span>{value}</span>}
+                value={value}
+              />
+            </label>
           </div>
         );
       })}

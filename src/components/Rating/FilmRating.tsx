@@ -28,9 +28,11 @@ export const FilmRating = ({ movieId, currMovieRating }: IFilmRatingProps) => {
       const data = await mutate({
         movieId: movieId,
         user_rate: rating,
-      }).unwrap();
+      });
 
-      if (data.token) {
+      console.log(data);
+
+      if (data.data?.movieId) {
         dispatch(setSingle({ id: movieId, rating: rating }));
       }
     } catch (error) {
