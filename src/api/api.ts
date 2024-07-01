@@ -2,7 +2,6 @@ import {
   BaseQueryFn,
   FetchArgs,
   FetchBaseQueryError,
-  RootState,
   createApi,
   fetchBaseQuery,
 } from '@reduxjs/toolkit/query/react';
@@ -16,6 +15,8 @@ import {
 import { setToken } from '../slices/authSlice';
 import { setOpen } from '../slices/modalSlice';
 
+import type { RootState } from '../store/store';
+
 export const BASE_URL = 'http://localhost:3030/api/v1';
 
 const baseQueryWithAuth: BaseQueryFn<
@@ -23,7 +24,8 @@ const baseQueryWithAuth: BaseQueryFn<
   unknown,
   FetchBaseQueryError
 > = async (args, api, extraOptions) => {
-  const user = (api.getState() as RootState).userSlice;
+  const appState = api.getState() as RootState;
+  const user = appState.userSlice;
 
   const baseQuery = fetchBaseQuery({
     baseUrl: BASE_URL,
