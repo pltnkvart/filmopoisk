@@ -1,9 +1,10 @@
+import { FilmInfoCard } from '~/components/FilmInfoCard/FilmInfoCard';
+import { ActorCard } from '~/components/ActorCard/ActorCard';
+
 import { useParams } from 'react-router-dom';
-import { apiSlice } from '../../../api/api';
+import { apiSlice } from '~/slices/api';
 
 import styles from './styles.module.css';
-import { ActorCard } from '../../ActorCard/ActorCard';
-import { FilmInfoCard } from '../../FilmInfoCard/FilmInfoCard';
 
 export const FilmPage = () => {
   const { filmId } = useParams();

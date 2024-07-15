@@ -3,7 +3,7 @@ import { useAppDispatch, useAppSelector } from '../../store/store';
 import { Button } from '../Button/Button';
 import { InputArea } from '../Input/InputSearch';
 import styles from './styles.module.css';
-import { apiSlice } from '../../api/api';
+import { apiSlice } from '../../slices/api';
 import { setToken } from '../../slices/authSlice';
 import { Modal } from '../Modal/Modal';
 import { setOpen } from '../../slices/modalSlice';

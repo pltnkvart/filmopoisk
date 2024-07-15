@@ -1,14 +1,16 @@
-import { ChangeEvent, useState } from 'react';
-import { useDebounce } from '../../../hooks/useDebounce';
-import { GENRES, YEARS } from '../../../types/types';
-import { FilmsList } from '../../FilmsList/FilmsList';
-import { FilterMenu } from '../../FilterMenu/FilterMenu';
+import { Pagination } from '~/components/Pagination/Pagination';
+import { LoadingSpinner } from '~/components/LoadingSpinner/LoadingSpinner';
+import { FilterMenu } from '~/components/FilterMenu/FilterMenu';
+import { InputArea } from '~/components/Input/InputSearch';
+import { FilmsList } from '~/components/FilmsList/FilmsList';
+import { GENRES, YEARS } from '~/types/types';
+
 import styles from './styles.module.css';
-import { InputArea } from '../../Input/InputSearch';
-import { apiSlice } from '../../../api/api';
-import { Pagination } from '../../Pagination/Pagination';
+
+import { ChangeEvent, useState } from 'react';
 import { useSearchParams } from 'react-router-dom';
-import { LoadingSpinner } from '../../LoadingSpinner/LoadingSpinner';
+import { useDebounce } from '~/hooks/useDebounce';
+import { apiSlice } from '~/slices/api';
 
 export const FilmsPage = () => {
   const [searchParams, setSearchParams] = useSearchParams();

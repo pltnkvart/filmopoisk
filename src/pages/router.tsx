@@ -1,6 +1,6 @@
 import { createBrowserRouter } from 'react-router-dom';
-import { FilmsPage } from '../components/Pages/FilmsPage/FilmsPage';
-import { FilmPage } from '../components/Pages/FilmPage/FilmPage';
+import { FilmsPage } from '~/pages/FilmsPage/FilmsPage';
+import { FilmPage } from '~/pages/FilmPage/FilmPage';
 
 export const router = createBrowserRouter([
   {

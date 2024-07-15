@@ -11,9 +11,9 @@ import {
   ILogin,
   IQueryParams,
   RateResult,
-} from '../types/types';
-import { setToken } from '../slices/authSlice';
-import { setOpen } from '../slices/modalSlice';
+} from '~/types/types';
+import { setToken } from '~/slices/authSlice';
+import { setOpen } from '~/slices/modalSlice';
 
 import type { RootState } from '../store/store';
 

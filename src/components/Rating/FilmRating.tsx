@@ -1,6 +1,6 @@
 import React from 'react';
 import { useAppDispatch, useAppSelector } from '../../store/store';
-import { apiSlice } from '../../api/api';
+import { apiSlice } from '../../slices/api';
 import { setSingle } from '../../slices/userRatingSlice';
 import { Rating } from './Rating';
 
