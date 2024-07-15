@@ -1,4 +1,4 @@
-import { GENRES, YEARS } from '../../types/types';
+import { GENRES, YEARS } from '~/types/types';
 import { SelectDropdown } from '../Select/Select';
 
 import styles from './styles.module.css';

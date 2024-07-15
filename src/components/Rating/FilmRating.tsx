@@ -1,8 +1,8 @@
-import React from 'react';
-import { useAppDispatch, useAppSelector } from '../../store/store';
-import { apiSlice } from '../../slices/api';
-import { setSingle } from '../../slices/userRatingSlice';
 import { Rating } from './Rating';
+
+import { useAppDispatch, useAppSelector } from '~/store/store';
+import { apiSlice } from '~/slices/api';
+import { setSingle } from '~/slices/userRatingSlice';
 
 import styles from './styles.module.css';
 

@@ -1,8 +1,8 @@
+import { CloseIcon } from '../Icons/CloseIcon';
 import { createPortal } from 'react-dom';
 
 import styles from './styles.module.css';
 import classNames from 'classnames';
-import { CloseIcon } from '../Icons/CloseIcon';
 
 export interface IModalProps {
   title: string;

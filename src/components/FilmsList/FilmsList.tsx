@@ -1,7 +1,8 @@
 import { FilmCard } from '../FilmCard/FilmCard';
-import styles from './styles.module.css';
-import { IGetFilmsProps } from '../../types/types';
 import { useNavigate } from 'react-router-dom';
+import type { IGetFilmsProps } from '~/types/types';
+
+import styles from './styles.module.css';
 
 interface IFilmsListProps {
   data: IGetFilmsProps;

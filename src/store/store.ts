@@ -1,6 +1,6 @@
 import { configureStore } from '@reduxjs/toolkit';
-import { apiSlice } from '~/slices/api';
 import { useDispatch, useSelector } from 'react-redux';
+import { apiSlice } from '~/slices/api';
 import userReducer from '~/slices/authSlice';
 import modalReducer from '~/slices/modalSlice';
 import userRatesReducer from '~/slices/userRatingSlice';

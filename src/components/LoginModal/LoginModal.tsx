@@ -1,12 +1,14 @@
 import { FormEvent, useEffect, useState } from 'react';
-import { useAppDispatch, useAppSelector } from '../../store/store';
+import { useAppDispatch, useAppSelector } from '~/store/store';
 import { Button } from '../Button/Button';
 import { InputArea } from '../Input/InputSearch';
-import styles from './styles.module.css';
-import { apiSlice } from '../../slices/api';
-import { setToken } from '../../slices/authSlice';
 import { Modal } from '../Modal/Modal';
-import { setOpen } from '../../slices/modalSlice';
+
+import styles from './styles.module.css';
+
+import { apiSlice } from '~/slices/api';
+import { setToken } from '~/slices/authSlice';
+import { setOpen } from '~/slices/modalSlice';
 
 export const LoginModal = () => {
   const open = useAppSelector((state) => state.modalSlice);

@@ -1,9 +1,9 @@
+import React from 'react';
 import { Provider } from 'react-redux';
+import { RouterProvider } from 'react-router-dom';
 import { store } from '~/store/store';
 import { router } from '~/pages/router';
-import { RouterProvider } from 'react-router-dom';
 import { Layout } from '~/components/Layout/Layout';
-import React from 'react';
 
 export const App = () => {
   return (

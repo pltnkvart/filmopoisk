@@ -1,10 +1,12 @@
 import { Button } from '../Button/Button';
-import styles from './styles.module.css';
-import { useAppDispatch, useAppSelector } from '../../store/store';
-import { setToken } from '../../slices/authSlice';
-import { setOpen } from '../../slices/modalSlice';
 import { LoginModal } from '../LoginModal/LoginModal';
 import { UserIcon } from '../Icons/UserIcon';
+
+import { useAppDispatch, useAppSelector } from '~/store/store';
+import { setToken } from '~/slices/authSlice';
+import { setOpen } from '~/slices/modalSlice';
+
+import styles from './styles.module.css';
 
 export const Header = () => {
   const user = useAppSelector((state) => state.userSlice.logged);

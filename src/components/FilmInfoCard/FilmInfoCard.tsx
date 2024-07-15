@@ -1,5 +1,6 @@
-import { FullMovieInfo } from '../../types/types';
+import type { FullMovieInfo } from '~/types/types';
 import { FilmRating } from '../Rating/FilmRating';
+
 import styles from './styles.module.css';
 
 interface IFilmInfoCardProps {

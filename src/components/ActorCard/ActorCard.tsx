@@ -1,10 +1,8 @@
+import { Actor } from '~/types/types';
 import styles from './styles.module.css';
 
 interface IActorCardProps {
-  actor: {
-    name: string;
-    photo: string;
-  };
+  actor: Actor;
 }
 
 export const ActorCard = ({ actor }: IActorCardProps) => {

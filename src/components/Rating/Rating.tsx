@@ -1,6 +1,7 @@
 import { useState } from 'react';
-import styles from './styles.module.css';
 import { StarIcon } from '../Icons/StarIcon';
+
+import styles from './styles.module.css';
 
 interface IRatingProps {
   id: string;
