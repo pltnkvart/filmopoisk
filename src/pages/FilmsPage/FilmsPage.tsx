@@ -3,6 +3,7 @@ import { LoadingSpinner } from '~/components/LoadingSpinner/LoadingSpinner';
 import { FilterMenu } from '~/components/FilterMenu/FilterMenu';
 import { InputArea } from '~/components/Input/InputSearch';
 import { FilmsList } from '~/components/FilmsList/FilmsList';
+import { ErrorPage } from '../ErrorPage/ErrorPage';
 import { GENRES, YEARS } from '~/types/types';
 
 import styles from './styles.module.css';
@@ -10,7 +11,7 @@ import styles from './styles.module.css';
 import { ChangeEvent, useState } from 'react';
 import { useSearchParams } from 'react-router-dom';
 import { useDebounce } from '~/hooks/useDebounce';
-import { apiSlice } from '~/slices/api';
+import { useGetFilmsQuery as getFilms } from '~/slices/api';
 
 export const FilmsPage = () => {
   const [searchParams, setSearchParams] = useSearchParams();
@@ -29,7 +30,7 @@ export const FilmsPage = () => {
 
   const debouncedSearchQuery = useDebounce(searchQuery, 500);
 
-  const { data, error, isLoading } = apiSlice.useGetFilmsQuery({
+  const { data, error, isLoading } = getFilms({
     page: currentPage,
     title: debouncedSearchQuery,
     genre: selectedGenre,
@@ -45,7 +46,7 @@ export const FilmsPage = () => {
   }
 
   if (error) {
-    return <div>Error</div>;
+    return <ErrorPage />;
   }
 
   const handleGenreChange = (genre: keyof typeof GENRES): void => {
@@ -89,7 +90,7 @@ export const FilmsPage = () => {
             onChange={handleSearchChange}
           />
         </div>
-        {isLoading && !data && <LoadingSpinner />}
+        {isLoading && <LoadingSpinner />}
         {data?.search_result.length === 0 ? (
           <div className={styles.empty}>
             <h1 className={styles.title}>Фильмы не найдены</h1>

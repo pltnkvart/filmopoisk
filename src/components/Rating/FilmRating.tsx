@@ -1,7 +1,7 @@
 import { Rating } from './Rating';
 
 import { useAppDispatch, useAppSelector } from '~/store/store';
-import { apiSlice } from '~/slices/api';
+import { apiSlice, usePostRateMovieMutation as rateMovie } from '~/slices/api';
 import { setSingle } from '~/slices/userRatingSlice';
 
 import styles from './styles.module.css';
@@ -16,7 +16,7 @@ export const FilmRating = ({ movieId, currMovieRating }: IFilmRatingProps) => {
   const userRating = useAppSelector((state) => state.ratingSlice[movieId]);
   const dispatch = useAppDispatch();
 
-  const [mutate] = apiSlice.usePostRateMovieMutation();
+  const [mutate] = rateMovie();
 
   const handler = async (
     e: React.MouseEvent<HTMLInputElement>,

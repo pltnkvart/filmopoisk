@@ -15,7 +15,7 @@ import {
 import { setToken } from '~/slices/authSlice';
 import { setOpen } from '~/slices/modalSlice';
 
-import type { RootState } from '../store/store';
+import type { RootState } from '~/store/store';
 
 export const BASE_URL = 'http://localhost:3030/api/v1';
 
@@ -88,3 +88,10 @@ export const apiSlice = createApi({
     }),
   }),
 });
+
+export const {
+  useGetFilmsQuery,
+  useGetFilmByIdQuery,
+  usePostLoginMutation,
+  usePostRateMovieMutation,
+} = apiSlice;

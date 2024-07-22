@@ -1,0 +1,21 @@
+.heading {
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 24px;
+}
+
+.under {
+  font-size: 14px;
+  color: gray;
+}
+
+.wrapper {
+  font-family: 'Roboto';
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: calc(100vh - 88px);
+  margin-top: auto;
+  margin-bottom: auto;
+}

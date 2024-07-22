@@ -6,7 +6,7 @@ import { Modal } from '../Modal/Modal';
 
 import styles from './styles.module.css';
 
-import { apiSlice } from '~/slices/api';
+import { usePostLoginMutation as login } from '~/slices/api';
 import { setToken } from '~/slices/authSlice';
 import { setOpen } from '~/slices/modalSlice';
 
@@ -17,7 +17,7 @@ export const LoginModal = () => {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
 
-  const [mutate, { data, status, error }] = apiSlice.usePostLoginMutation();
+  const [mutate, { data, status, error }] = login();
 
   useEffect(() => {
     if (data) {
